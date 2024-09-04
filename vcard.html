@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dentsu Creative</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.dentsucreative.com/favicon.ico"
+    />
+    <script
+      type="text/javascript"
+      src="https://dnc.dotdentsucreative.com/assets/js/qr-code-styling.js"
+    ></script>
+
+    <style>
+      @font-face {
+        font-family: stabilGrosek;
+        src: url(../assets/Fonts/StabilGrotesk-Regular.otf);
+      }
+      @font-face {
+        font-family: stabilGrosek-light;
+        src: url(../assets/Fonts/StabilGrotesk-Light.otf);
+      }
+      @font-face {
+        font-family: stabilGrosek-bold;
+        src: url(../assets/Fonts/StabilGrotesk-Bold.otf);
+      }
+      @font-face {
+        font-family: stabilGrosek-black;
+        src: url(../assets/Fonts/StabilGrotesk-Black.otf);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .font-1 {
+        font-family: stabilGrosek;
+      }
+      .font-2 {
+        font-family: stabilGrosek-light;
+      }
+      .font-3 {
+        font-family: stabilGrosek-bold;
+      }
+      .font-4 {
+        font-family: stabilGrosek-black;
+      }
+
+      .main-container {
+        text-align: center;
+
+        background-color: #000;
+
+        color: #fff;
+        padding-top: 35px;
+      }
+      .btn-container {
+        text-align: center;
+
+        background-color: #000;
+
+        color: #fff;
+        padding: 4px 80px;
+        margin-top: 20px;
+      }
+
+      .details-container {
+        font-size: 12px;
+        text-align: left;
+
+        width: 100%;
+        padding-bottom: 45px;
+        padding-left: 6px;
+        padding-top: 8px;
+      }
+
+      .details-container-child {
+        display: flex;
+        align-items: center;
+
+        padding-left: 18px;
+        margin-bottom: 15px;
+      }
+
+      .reset-p {
+        margin: 0;
+        padding: 0;
+      }
+
+      .btn {
+        outline: none;
+
+        padding: 10px;
+
+        color: #fff;
+
+        cursor: pointer;
+      }
+
+      .fs-12 {
+        font-size: 12px;
+        color: #ffff;
+      }
+
+      .fs-20-bold {
+        font-size: 20px;
+        font-weight: 800;
+        color: #ffff;
+      }
+
+      .mb-n-10 {
+        margin-bottom: -10px;
+      }
+
+      p,
+      a {
+        text-decoration: none;
+      }
+
+      .img-style {
+        border-top-left-radius: 50%;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+      }
+
+      .rounded-letter {
+        border: 1px solid #58595b;
+        border-radius: 50%;
+        font-size: 10px;
+
+        padding: 7px;
+        margin-right: 10px;
+
+        color: #ffff;
+        background-color: #58595b;
+      }
+
+      .grey-font {
+        color: #58595b;
+      }
+      .white-font {
+        color: #ffff;
+      }
+
+      .uppercase {
+        text-transform: uppercase;
+      }
+
+      #user_image {
+        object-fit: cover;
+        object-position: 40%;
+      }
+
+      #qrcode canvas {
+        height: 100%;
+        width: 80%;
+        border-radius: 20px;
+      }
+
+      .circle {
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        padding: 2px;
+        background: #58595b;
+        border: 1px solid #58595b;
+        color: #fff;
+        text-align: center;
+        font-size: 13px;
+      }
+
+      .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 550px;
+        perspective: 1000px;
+      }
+
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .flip-card-back {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #000;
+        color: white;
+        transform: rotateY(180deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front main-container">
+          <div>
+            <img
+              src="../assets/logo.png"
+              alt="Dentsu Creative"
+              style="height: 68px"
+            />
+          </div>
+
+          <div>
+            <img
+              id="user_image"
+              class="img-style"
+              src="./assets/aqeemabdullah@dentsu.png"
+              alt="Aqeem Abdullah"
+              height="100"
+              width="100"
+            />
+          </div>
+
+          <p class="reset-p mb-n-10 fs-20-bold uppercase font-1" id="fullname">
+            Aqeem Abdullah
+          </p>
+          <p class="reset-p fs-20-bold uppercase font-1">Dentsu Creative</p>
+          <p class="reset-p fs-12 font-1" id="occupation">
+            Front End Developer
+          </p>
+
+          <div class="details-container font-2">
+            <div class="details-container-child" style="margin-top: 10px">
+              <div class="circle">E</div>
+              <a
+                style="margin-left: 10px"
+                class="white-font"
+                href="mailto:Muhammadaqeem.Abdullah@dentsu.com"
+                id="email"
+              >
+                Muhammadaqeem.Abdullah@dentsu.com
+              </a>
+            </div>
+            <div class="details-container-child">
+              <div class="circle font-2">M</div>
+              <a
+                style="margin-left: 10px"
+                class="white-font"
+                href="tel:+6012-399 7559"
+                id="mobile_number"
+                >+6012-399 7559</a
+              >
+            </div>
+          </div>
+
+          <p class="font-2" style="font-size: 8px">
+            To save my contact: <br />
+            Click on <span class="font-3">New Contact</span>. Click on
+            <span class="font-3">Done</span>.
+          </p>
+        </div>
+        <div class="flip-card-back">
+          <div>
+            <div>
+              <img
+                src="../assets/logo.png"
+                alt="Dentsu Creative"
+                style="height: 68px"
+              />
+            </div>
+            <p class="reset-p mb-n-10 fs-20-bold uppercase font-1">
+              Aqeem Abdullah
+            </p>
+            <p class="reset-p fs-20-bold uppercase font-1">Dentsu Creative</p>
+            <p class="reset-p fs-12 font-1" style="margin-bottom: 50px">
+              Front End Developer
+            </p>
+            <div id="qrcode"></div>
+            <p class="font-2" style="font-size: 8px; color: white">
+              Scan to <span class="font-3">Save My Contact Details.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-container">
+      <a id="save-btn" class="btn font-2"> View in Contacts </a>
+    </div>
+  </body>
+</html>
+<script>
+  const saveBtn = document.getElementById("save-btn");
+  const path = window.location.pathname;
+  const trimmedUrl = path.replace(/\//g, "");
+
+  console.log(trimmedUrl);
+
+  document.querySelector(".flip-card").addEventListener("click", function () {
+    const cardInner = this.querySelector(".flip-card-inner");
+    cardInner.style.transform =
+      cardInner.style.transform === "rotateY(180deg)"
+        ? "rotateY(0deg)"
+        : "rotateY(180deg)";
+  });
+
+  saveBtn.addEventListener("click", () => {
+    const fullname = document.getElementById("fullname").textContent;
+    const occupation = document.getElementById("occupation").textContent;
+    const email = document.getElementById("email").textContent;
+    const mobile_number = document.getElementById("mobile_number").textContent;
+    const base64 = getBase64img();
+
+    let contact = {
+      name: `Dentsu Creative@${fullname}`,
+      mobile: mobile_number,
+      email: email.replace(/\s+/g, ""),
+      photo: base64,
+      title: occupation,
+    };
+
+    let fullName = contact.name;
+    let nameParts = fullName.split(" ");
+    let lastName = nameParts.pop();
+    let firstName = nameParts.join(" ");
+
+    let vcard =
+      "BEGIN:VCARD\nVERSION:3.0\n" +
+      "N:" +
+      lastName +
+      ";" +
+      firstName +
+      ";;;" +
+      "\nFN:" +
+      contact.name +
+      "\nORG:Dentsu Creative" +
+      "\nTEL;TYPE=cell,voice:" +
+      contact.mobile +
+      "\nEMAIL;TYPE=work:" +
+      contact.email +
+      "\nPHOTO;ENCODING=b;TYPE=image:" +
+      contact.photo +
+      "\nADR;TYPE=work:<?php echo $data['address'];?>" +
+      "\nTITLE:" +
+      contact.title +
+      "\nEND:VCARD";
+    var blob = new Blob([vcard], { type: "text/vcard" });
+    var url = URL.createObjectURL(blob);
+
+    const newLink = document.createElement("a");
+    newLink.download = contact.name + ".vcf";
+    newLink.textContent = contact.name;
+    newLink.href = url;
+
+    newLink.click();
+  });
+
+  function getBase64img() {
+    var c = document.createElement("canvas");
+    var img = document.getElementById("user_image");
+    c.height = img.naturalHeight;
+    c.width = img.naturalWidth;
+    var ctx = c.getContext("2d");
+
+    ctx.drawImage(img, 0, 0, c.width, c.height);
+    var base64String = c.toDataURL();
+    var base64ImageWithoutPrefix = base64String.replace(
+      "data:image/png;base64,",
+      ""
+    );
+    return base64ImageWithoutPrefix;
+  }
+
+  const qrCode = new QRCodeStyling({
+    width: 300,
+    height: 300,
+    margin: 5,
+    type: "canvas",
+    data: "https://dnc.dotdentsucreative.com/aqeemabd/",
+    image: "../assets/dc_logo.png",
+    dotsOptions: {
+      color: "#000000",
+      type: "classy",
+    },
+    backgroundOptions: {
+      color: "#ffffff",
+    },
+    imageOptions: {
+      hideBackgroundDots: true,
+      crossOrigin: "anonymous",
+      margin: 5,
+    },
+  });
+  qrCode.append(document.getElementById("qrcode"));
+</script>
